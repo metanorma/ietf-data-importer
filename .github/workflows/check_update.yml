@@ -24,15 +24,14 @@ jobs:
       - id: update_json
         run: |
           bundle exec bin/wg2json.rb > lib/metanorma/ietf/data/workgroup.json
+          git diff-index --quiet HEAD -- && has_changes="true" || has_changes="false"
+          echo "::set-output name=has_changes::${has_changes}"
 
+      - if: ${{ !steps.update_json.outputs.has_changes == 'true' }}
+        run: gem bump --version patch --tag --push
 
-      - if: ${{ !steps.checkTag.outputs.exists }}
-        run: |
-          gem bump --version patch --tag --push
-          git tag ${{ env.GNS_VERSION }}
-          git push origin master --tags
-
-      - name: publish to rubygems.org
+      - if: ${{ !steps.update_json.outputs.has_changes == 'true' }}
+        name: publish to rubygems.org
         env:
           RUBYGEMS_API_KEY: ${{secrets.METANORMA_CI_RUBYGEMS_API_KEY}}
         run: |
