@@ -7,7 +7,7 @@ on:
 
 jobs:
   check_update:
-    name: Check updates on https://tools.ietf.org/wg/
+    name: Check workgroups update
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
