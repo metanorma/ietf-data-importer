@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "json"
+require "metanorma/ietf/data/workgroups"
 
 RSpec.describe Metanorma::Ietf::Data do
   it "has a version number" do
@@ -9,8 +10,12 @@ RSpec.describe Metanorma::Ietf::Data do
 
   it "workgroup exists and valid json" do
     lib_path = File.join(File.dirname(__FILE__), "..", "..", "..", "lib")
-    wg_json = File.join(lib_path, "metanorma", "ietf", "data", "workgroup.json")
-    
-    expect { JSON.parse(File.read(wg_json)) }.not_to raise_error
+    json = File.join(lib_path, "metanorma", "ietf", "data", "workgroups.json")
+
+    expect { JSON.parse(File.read(json)) }.not_to raise_error
+  end
+
+  it "WORKGROUPS not empty" do
+    expect(Metanorma::Ietf::Data::WORKGROUPS).not_to be_empty
   end
 end
