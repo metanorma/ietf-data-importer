@@ -1,1 +1,2 @@
 /.rubocop-https*
+/Gemfile.lock
