@@ -24,7 +24,7 @@ jobs:
       - id: update_json
         run: |
           bundle exec bin/wg2json.rb > lib/metanorma/ietf/data/workgroup.json
-          git diff-index --quiet HEAD -- && has_changes="true" || has_changes="false"
+          git diff-index --quiet HEAD -- && has_changes="false" || has_changes="true"
           echo "::set-output name=has_changes::${has_changes}"
 
       - if: ${{ !steps.update_json.outputs.has_changes == 'true' }}
