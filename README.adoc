@@ -1,13 +1,13 @@
-= Metanorma IETF data
+= IETF Data Importer
 
-image:https://img.shields.io/gem/v/metanorma-ietf-data.svg["Gem Version", link="https://rubygems.org/gems/metanorma-ietf-data"]
-image:https://github.com/metanorma/metanorma-ietf-data/actions/workflows/rake.yml/badge.svg["Build Status", link="https://github.com/metanorma/metanorma-ietf-data/actions/workflows/rake.yml"]
-image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-ietf-data.svg["Pull Requests", link="https://github.com/metanorma/metanorma-ietf-data/pulls"]
-image:https://img.shields.io/github/commits-since/metanorma/metanorma-ietf-data/latest.svg["Commits since latest", link="https://github.com/metanorma/metanorma-ietf-data/releases"]
+image:https://img.shields.io/gem/v/ietf-data-importer.svg["Gem Version", link="https://rubygems.org/gems/ietf-data-importer"]
+image:https://github.com/metanorma/ietf-data-importer/actions/workflows/rake.yml/badge.svg["Build Status", link="https://github.com/metanorma/ietf-data-importer/actions/workflows/rake.yml"]
+image:https://img.shields.io/github/issues-pr-raw/metanorma/ietf-data-importer.svg["Pull Requests", link="https://github.com/metanorma/ietf-data-importer/pulls"]
+image:https://img.shields.io/github/commits-since/metanorma/ietf-data-importer/latest.svg["Commits since latest", link="https://github.com/metanorma/ietf-data-importer/releases"]
 
 == Purpose
 
-Metanorma IETF data is a Ruby gem providing access to information about IETF working groups and IRTF research groups.
+IETF Data Importer is a Ruby gem providing access to information about IETF working groups and IRTF research groups.
 
 It includes:
 
@@ -20,40 +20,29 @@ This gem exists because the official sources often change their layout or may be
 * https://datatracker.ietf.org/group/ (formerly tools.ietf.org/wg)
 * https://irtf.org/groups
 
-== Migration from Version 0.2.0
+== Migration from metanorma-ietf-data
 
-Version 1.0.0 introduces breaking changes:
+This gem is the renamed and restructured version of `metanorma-ietf-data`. The namespace and file structure have been changed to match other Metanorma data importer gems.
 
-* Removed `Metanorma::Ietf::Data::WORKGROUPS` constant
-* Replaced JSON array with YAML-based structured data
-* Added new API with filtering capabilities
-
-To migrate from version 0.2.0:
+To migrate from metanorma-ietf-data:
 
 . Replace the following:
 +
 [source,diff]
 ----
-- require "metanorma/ietf/data/workgroups"
-- groups = JSON.parse(Metanorma::Ietf::Data::WORKGROUPS)
-+ require "metanorma/ietf/data"
-+ groups = Metanorma::Ietf::Data.groups.map(&:name)
+- require "metanorma/ietf/data"
+- groups = Metanorma::Ietf::Data.groups
++ require "ietf/data/importer"
++ groups = Ietf::Data::Importer.groups
 ----
 
-. If you need the original flat list of group names:
+. Update your Gemfile:
 +
-[source,ruby]
+[source,diff]
 ----
-require "metanorma/ietf/data"
-
-# Get a flat list of group names (similar to legacy format)
-group_names = Metanorma::Ietf::Data.groups.map(&:name)
-
-# If you need to remove the "Working Group" suffix
-group_names = group_names.map { |name| name.gsub(/ Working Group$/, "") }
+- gem 'metanorma-ietf-data'
++ gem 'ietf-data-importer'
 ----
-
-NOTE: The new API provides much richer data and filtering capabilities compared to the simple array of names in version 0.2.0.
 
 == Installation
 
@@ -61,7 +50,7 @@ Add this line to your application's Gemfile:
 
 [source,ruby]
 ----
-gem 'metanorma-ietf-data'
+gem 'ietf-data-importer'
 ----
 
 And then execute:
@@ -75,7 +64,7 @@ Or install it yourself as:
 
 [source,shell]
 ----
-$ gem install metanorma-ietf-data
+$ gem install ietf-data-importer
 ----
 
 == Usage
@@ -86,46 +75,46 @@ The gem provides a command-line tool to fetch current group data:
 
 [source,shell]
 ----
-$ ietf-groups fetch output.yaml
-$ ietf-groups fetch output.json --format=json
+$ ietf-data-importer fetch output.yaml
+$ ietf-data-importer fetch output.json --format=json
 ----
 
 === For Ruby API users
 
 [source,ruby]
 ----
-require 'metanorma/ietf/data'
+require 'ietf/data/importer'
 
 # Check if a group exists
-Metanorma::Ietf::Data.group_exists?('httpbis')
+Ietf::Data::Importer.group_exists?('httpbis')
 
 # Get information about a specific group
-group = Metanorma::Ietf::Data.find_group('httpbis')
+group = Ietf::Data::Importer.find_group('httpbis')
 puts group.name
 puts group.organization
 puts group.status
 
 # Get all IETF working groups
-wgs = Metanorma::Ietf::Data.working_groups
+wgs = Ietf::Data::Importer.working_groups
 
 # Get all IRTF research groups
-rgs = Metanorma::Ietf::Data.research_groups
+rgs = Ietf::Data::Importer.research_groups
 
 # Get groups by a specific type
-type_groups = Metanorma::Ietf::Data.groups_by_type('wg')
+type_groups = Ietf::Data::Importer.groups_by_type('wg')
 
 # Get groups by area
-area_groups = Metanorma::Ietf::Data.groups_by_area('Applications and Real-Time Area')
+area_groups = Ietf::Data::Importer.groups_by_area('Applications and Real-Time Area')
 
 # Get active or concluded groups
-active = Metanorma::Ietf::Data.active_groups
-concluded = Metanorma::Ietf::Data.concluded_groups
+active = Ietf::Data::Importer.active_groups
+concluded = Ietf::Data::Importer.concluded_groups
 
 # Get all available group types
-types = Metanorma::Ietf::Data.group_types
+types = Ietf::Data::Importer.group_types
 
 # Get all areas
-areas = Metanorma::Ietf::Data.areas
+areas = Ietf::Data::Importer.areas
 ----
 
 == Data model
@@ -171,10 +160,10 @@ The gem provides a command-line tool with the following commands:
 [source,shell]
 ----
 # Fetch current IETF/IRTF group data
-$ ietf-groups fetch [OUTPUT_FILE] --format=yaml|json
+$ ietf-data-importer fetch [OUTPUT_FILE] --format=yaml|json
 
 # Integrate a YAML file into the gem for distribution
-$ ietf-groups integrate YAML_FILE
+$ ietf-data-importer integrate YAML_FILE
 ----
 
 == Data schema

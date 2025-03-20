@@ -1,0 +1,12 @@
+groups:
+  - abbreviation: testgroup
+    name: Test Group
+    organization: ietf
+    type: wg
+    area: Testing Area
+    status: active
+    description: This is a test group for command validation
+    chairs:
+      - Test Chair 1
+    mailing_list: test@example.com
+    website_url: https://example.com/test

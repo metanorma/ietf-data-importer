@@ -1,13 +1,19 @@
 # frozen_string_literal: true
 
 require "yaml"
-require_relative "models"
+require_relative "importer/version"
+require_relative "importer/group_collection"
+require_relative "importer/scrapers"
+require_relative "importer/cli"
 
-module Metanorma
-  module Ietf
-    module Data
+module Ietf
+  module Data
+    # Main module for IETF/IRTF group data importer
+    module Importer
+      class Error < StandardError; end
+
       # Path to the groups data file
-      GROUPS_PATH = File.join(File.dirname(__FILE__), "groups.yaml")
+      GROUPS_PATH = File.join(File.dirname(__FILE__), "importer", "groups.yaml")
 
       # Load the groups if the file exists, otherwise return empty collection
       def self.load_groups

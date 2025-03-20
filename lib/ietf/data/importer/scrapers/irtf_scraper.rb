@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 require_relative "base_scraper"
-require_relative "../models"
+require_relative "../group_collection"
 
-module Metanorma
-  module Ietf
-    module Data
+module Ietf
+  module Data
+    module Importer
       module Scrapers
         # Scraper for IRTF groups from irtf.org
         class IrtfScraper < BaseScraper
@@ -13,7 +13,7 @@ module Metanorma
           BASE_URL = "https://www.irtf.org/groups.html"
 
           # Fetch all IRTF groups
-          # @return [Array<Metanorma::Ietf::Data::Group>] Array of Group objects
+          # @return [Array<Ietf::Data::Importer::Group>] Array of Group objects
           def fetch
             groups = []
             log "Fetching IRTF groups..."
@@ -83,7 +83,7 @@ module Metanorma
 
           # Extract groups from the dropdown menu
           # @param doc [Nokogiri::HTML::Document] The HTML document
-          # @return [Array<Metanorma::Ietf::Data::Group>] Array of Group objects
+          # @return [Array<Ietf::Data::Importer::Group>] Array of Group objects
           def extract_from_dropdown(doc)
             groups = []
 
@@ -128,7 +128,7 @@ module Metanorma
               begin
                 details = fetch_group_details(details_url)
 
-                group = Data::Group.new(
+                group = Importer::Group.new(
                   abbreviation: abbreviation,
                   name: name,
                   organization: 'irtf',
@@ -159,7 +159,7 @@ module Metanorma
           # @param doc [Nokogiri::HTML::Document] The HTML document
           # @param section_title [String] The title of the section to extract from
           # @param status [String] The status of the groups in this section (active/concluded)
-          # @return [Array<Metanorma::Ietf::Data::Group>] Array of Group objects
+          # @return [Array<Ietf::Data::Importer::Group>] Array of Group objects
           def extract_groups(doc, section_title, status)
             groups = []
             section = doc.xpath("//h3[contains(text(), '#{section_title}')]/following-sibling::ul[1]")
@@ -194,7 +194,7 @@ module Metanorma
               begin
                 details = fetch_group_details(details_url)
 
-                group = Data::Group.new(
+                group = Importer::Group.new(
                   abbreviation: abbreviation,
                   name: name.sub(/\s*\([^)]+\)\s*/, '').strip,
                   organization: 'irtf',
@@ -222,7 +222,7 @@ module Metanorma
           # Helper method to extract groups from any list without requiring a specific section heading
           # @param list_element [Nokogiri::XML::Element] The list element to extract from
           # @param status [String] The status of the groups in this list (active/concluded)
-          # @return [Array<Metanorma::Ietf::Data::Group>] Array of Group objects
+          # @return [Array<Ietf::Data::Importer::Group>] Array of Group objects
           def extract_groups_from_list(list_element, status)
             groups = []
 
@@ -265,7 +265,7 @@ module Metanorma
               begin
                 details = fetch_group_details(details_url)
 
-                group = Data::Group.new(
+                group = Importer::Group.new(
                   abbreviation: abbreviation,
                   name: name.sub(/\s*\([^)]+\)\s*/, '').strip,
                   organization: 'irtf',

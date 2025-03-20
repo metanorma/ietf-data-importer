@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "metanorma/ietf/data"
+require "ietf/data/importer"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 require_relative "base_scraper"
-require_relative "../models"
+require_relative "../group_collection"
 
-module Metanorma
-  module Ietf
-    module Data
+module Ietf
+  module Data
+    module Importer
       module Scrapers
         # Scraper for IETF groups from datatracker.ietf.org
         class IetfScraper < BaseScraper
@@ -13,7 +13,7 @@ module Metanorma
           BASE_URL = "https://datatracker.ietf.org/group/"
 
           # Fetch all IETF groups
-          # @return [Array<Metanorma::Ietf::Data::Group>] Array of Group objects
+          # @return [Array<Ietf::Data::Importer::Group>] Array of Group objects
           def fetch
             groups = []
             log "Fetching IETF groups..."
@@ -98,7 +98,7 @@ module Metanorma
           # Extract groups from a table on the group type page
           # @param doc [Nokogiri::HTML::Document] The HTML document
           # @param type [Hash] The group type information
-          # @param groups [Array<Metanorma::Ietf::Data::Group>] Array to add groups to
+          # @param groups [Array<Ietf::Data::Importer::Group>] Array to add groups to
           def extract_groups_from_table(doc, type, groups)
             # Try different table selectors
             selectors = [
@@ -178,7 +178,7 @@ module Metanorma
                 details = fetch_group_details(detail_url)
 
                 # Create Group object
-                group = Data::Group.new(
+                group = Importer::Group.new(
                   abbreviation: abbreviation,
                   name: name,
                   organization: 'ietf',

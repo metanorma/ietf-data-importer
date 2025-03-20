@@ -2,9 +2,9 @@
 
 require "lutaml/model"
 
-module Metanorma
-  module Ietf
-    module Data
+module Ietf
+  module Data
+    module Importer
       # Represents a single IETF or IRTF group
       class Group < Lutaml::Model::Serializable
         attribute :abbreviation, :string
@@ -35,15 +35,6 @@ module Metanorma
           map "website_url", to: :website_url
           map "charter_url", to: :charter_url
           map "concluded_date", to: :concluded_date
-        end
-      end
-
-      # Represents a collection of IETF and IRTF groups
-      class GroupCollection < Lutaml::Model::Serializable
-        attribute :groups, Group, collection: true
-
-        key_value do
-          map "groups", to: :groups
         end
       end
     end

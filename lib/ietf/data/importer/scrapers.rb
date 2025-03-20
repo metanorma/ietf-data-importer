@@ -3,15 +3,15 @@
 require_relative "scrapers/base_scraper"
 require_relative "scrapers/ietf_scraper"
 require_relative "scrapers/irtf_scraper"
-require_relative "models"
+require_relative "group_collection"
 
-module Metanorma
-  module Ietf
-    module Data
+module Ietf
+  module Data
+    module Importer
       # Module for IETF/IRTF web scrapers
       module Scrapers
         # Fetch all IETF and IRTF groups
-        # @return [Metanorma::Ietf::Data::GroupCollection] Collection of all groups
+        # @return [Ietf::Data::Importer::GroupCollection] Collection of all groups
         def self.fetch_all
           puts "Starting to fetch IETF and IRTF group data..."
 
@@ -27,23 +27,23 @@ module Metanorma
           all_groups = ietf_groups + irtf_groups
           puts "Total: #{all_groups.size} groups"
 
-          Data::GroupCollection.new(groups: all_groups)
+          Importer::GroupCollection.new(groups: all_groups)
         end
 
         # Fetch IETF groups only
-        # @return [Array<Metanorma::Ietf::Data::Group>] Array of IETF groups
+        # @return [Array<Ietf::Data::Importer::Group>] Array of IETF groups
         def self.fetch_ietf
           IetfScraper.new.fetch
         end
 
         # Fetch IRTF groups only
-        # @return [Array<Metanorma::Ietf::Data::Group>] Array of IRTF groups
+        # @return [Array<Ietf::Data::Importer::Group>] Array of IRTF groups
         def self.fetch_irtf
           IrtfScraper.new.fetch
         end
 
         # Save group collection to a file
-        # @param collection [Metanorma::Ietf::Data::GroupCollection] Group collection to save
+        # @param collection [Ietf::Data::Importer::GroupCollection] Group collection to save
         # @param file_path [String] Path to the output file
         # @param format [Symbol] Output format (:yaml or :json)
         def self.save_to_file(collection, file_path, format = :yaml)

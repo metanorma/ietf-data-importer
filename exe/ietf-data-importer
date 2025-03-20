@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require_relative "../lib/ietf/data/importer/cli"
+
+Ietf::Data::Importer::Cli.start(ARGV)

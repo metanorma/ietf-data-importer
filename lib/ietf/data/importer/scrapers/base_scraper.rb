@@ -3,9 +3,9 @@
 require "nokogiri"
 require "open-uri"
 
-module Metanorma
-  module Ietf
-    module Data
+module Ietf
+  module Data
+    module Importer
       module Scrapers
         # Base class for web scrapers
         class BaseScraper
