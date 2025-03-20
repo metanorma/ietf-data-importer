@@ -1,0 +1,231 @@
+= Metanorma IETF data
+
+image:https://img.shields.io/gem/v/metanorma-ietf-data.svg["Gem Version", link="https://rubygems.org/gems/metanorma-ietf-data"]
+image:https://github.com/metanorma/metanorma-ietf-data/actions/workflows/rake.yml/badge.svg["Build Status", link="https://github.com/metanorma/metanorma-ietf-data/actions/workflows/rake.yml"]
+image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-ietf-data.svg["Pull Requests", link="https://github.com/metanorma/metanorma-ietf-data/pulls"]
+image:https://img.shields.io/github/commits-since/metanorma/metanorma-ietf-data/latest.svg["Commits since latest", link="https://github.com/metanorma/metanorma-ietf-data/releases"]
+
+== Purpose
+
+Metanorma IETF data is a Ruby gem providing access to information about IETF working groups and IRTF research groups.
+
+It includes:
+
+* Data models for IETF and IRTF groups
+* Command-line tools for fetching and updating group data
+* A Ruby API for accessing group information
+
+This gem exists because the official sources often change their layout or may be unavailable:
+
+* https://datatracker.ietf.org/group/ (formerly tools.ietf.org/wg)
+* https://irtf.org/groups
+
+== Migration from Version 0.2.0
+
+Version 1.0.0 introduces breaking changes:
+
+* Removed `Metanorma::Ietf::Data::WORKGROUPS` constant
+* Replaced JSON array with YAML-based structured data
+* Added new API with filtering capabilities
+
+To migrate from version 0.2.0:
+
+. Replace the following:
++
+[source,diff]
+----
+- require "metanorma/ietf/data/workgroups"
+- groups = JSON.parse(Metanorma::Ietf::Data::WORKGROUPS)
++ require "metanorma/ietf/data"
++ groups = Metanorma::Ietf::Data.groups.map(&:name)
+----
+
+. If you need the original flat list of group names:
++
+[source,ruby]
+----
+require "metanorma/ietf/data"
+
+# Get a flat list of group names (similar to legacy format)
+group_names = Metanorma::Ietf::Data.groups.map(&:name)
+
+# If you need to remove the "Working Group" suffix
+group_names = group_names.map { |name| name.gsub(/ Working Group$/, "") }
+----
+
+NOTE: The new API provides much richer data and filtering capabilities compared to the simple array of names in version 0.2.0.
+
+== Installation
+
+Add this line to your application's Gemfile:
+
+[source,ruby]
+----
+gem 'metanorma-ietf-data'
+----
+
+And then execute:
+
+[source,shell]
+----
+$ bundle install
+----
+
+Or install it yourself as:
+
+[source,shell]
+----
+$ gem install metanorma-ietf-data
+----
+
+== Usage
+
+=== For YAML/JSON data users
+
+The gem provides a command-line tool to fetch current group data:
+
+[source,shell]
+----
+$ ietf-groups fetch output.yaml
+$ ietf-groups fetch output.json --format=json
+----
+
+=== For Ruby API users
+
+[source,ruby]
+----
+require 'metanorma/ietf/data'
+
+# Check if a group exists
+Metanorma::Ietf::Data.group_exists?('httpbis')
+
+# Get information about a specific group
+group = Metanorma::Ietf::Data.find_group('httpbis')
+puts group.name
+puts group.organization
+puts group.status
+
+# Get all IETF working groups
+wgs = Metanorma::Ietf::Data.working_groups
+
+# Get all IRTF research groups
+rgs = Metanorma::Ietf::Data.research_groups
+
+# Get groups by a specific type
+type_groups = Metanorma::Ietf::Data.groups_by_type('wg')
+
+# Get groups by area
+area_groups = Metanorma::Ietf::Data.groups_by_area('Applications and Real-Time Area')
+
+# Get active or concluded groups
+active = Metanorma::Ietf::Data.active_groups
+concluded = Metanorma::Ietf::Data.concluded_groups
+
+# Get all available group types
+types = Metanorma::Ietf::Data.group_types
+
+# Get all areas
+areas = Metanorma::Ietf::Data.areas
+----
+
+== Data model
+
+=== Organizations
+
+[options="header"]
+|===
+| Organization | Abbreviation | Description
+| Internet Engineering Task Force | ietf | Standards development organization
+| Internet Research Task Force | irtf | Research organization
+|===
+
+=== Group types
+
+[options="header"]
+|===
+| Type | Abbreviation | Organization | Description
+| Working Group | wg | ietf | IETF working groups
+| Research Group | rg | irtf | IRTF research groups
+| Area | area | ietf | IETF areas
+| Team | team | ietf | IETF administrative teams
+| Program | program | irtf | IRTF programs
+| Directorate | dir | ietf | IETF directorates
+| Advisory Group | ag | ietf/irtf | Advisory groups
+|===
+
+=== Status values
+
+[options="header"]
+|===
+| Status | Description
+| active | Group is currently active
+| concluded | Group has completed its work
+| bof | Birds of a Feather (BOF) session
+| proposed | Proposed but not yet approved
+|===
+
+== Command-line interface
+
+The gem provides a command-line tool with the following commands:
+
+[source,shell]
+----
+# Fetch current IETF/IRTF group data
+$ ietf-groups fetch [OUTPUT_FILE] --format=yaml|json
+
+# Integrate a YAML file into the gem for distribution
+$ ietf-groups integrate YAML_FILE
+----
+
+== Data schema
+
+The YAML/JSON data follows this schema:
+
+[source,yaml]
+----
+groups:
+- abbreviation: string       # Group abbreviation or acronym
+  name: string               # Full group name
+  organization: string       # 'ietf' or 'irtf'
+  type: string               # Group type (see table above)
+  area: string               # Area name (for IETF WGs)
+  status: string             # Group status
+  description: string        # Description or charter text
+  chairs:                    # Array of chairs
+    - string                 # Chair name
+  mailing_list: string       # Mailing list address
+  mailing_list_archive: string # Archive URL
+  website_url: string        # Group website URL
+  charter_url: string        # Charter document URL
+  concluded_date: string     # ISO date of conclusion (if applicable)
+----
+
+[example]
+====
+[source,yaml]
+----
+groups:
+- abbreviation: httpbis
+  name: HTTP
+  organization: ietf
+  type: wg
+  area: Applications and Real-Time Area
+  status: active
+  description: The HTTP working group is chartered to maintain and develop the Hypertext Transfer Protocol...
+  chairs:
+    - Chair Person 1
+    - Chair Person 2
+  mailing_list: httpbis@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/httpbis/
+  website_url: https://httpwg.org/
+  charter_url: https://datatracker.ietf.org/wg/httpbis/about/
+----
+====
+
+== Copyright
+
+This gem is developed, maintained and funded by https://www.ribose.com[Ribose Inc.]
+
+== License
+
+The gem is available as open source under the terms of the https://opensource.org/licenses/BSD-2-Clause[2-Clause BSD License].

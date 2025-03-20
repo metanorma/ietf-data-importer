@@ -1,0 +1,1745 @@
+---
+groups:
+- abbreviation: artarea
+  name: Applications and Real-Time Area Open Meeting
+  organization: ietf
+  type: ag
+  status: active
+  mailing_list: art@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/art/
+- abbreviation: genarea
+  name: General Area Open Meeting
+  organization: ietf
+  type: ag
+  status: active
+  mailing_list: tools-help@ietf.org
+- abbreviation: iabopen
+  name: IAB Open Meeting
+  organization: ietf
+  type: ag
+  status: active
+  mailing_list: architecture-discuss@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/architecture-discuss/
+- abbreviation: opsarea
+  name: Operations & Management Area Open Meeting
+  organization: ietf
+  type: ag
+  status: active
+  mailing_list: tools-help@ietf.org
+- abbreviation: rtgarea
+  name: Routing Area Open Meeting
+  organization: ietf
+  type: ag
+  status: active
+  mailing_list: tools-help@ietf.org
+- abbreviation: saag
+  name: Security Area Open Meeting
+  organization: ietf
+  type: ag
+  status: active
+  mailing_list: saag@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/saag/
+- abbreviation: witarea
+  name: Web and Internet Transport Area Open Meeting
+  organization: ietf
+  type: ag
+  status: active
+  mailing_list: witarea@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/witarea/
+- abbreviation: aaadoctors
+  name: AAA Doctors
+  organization: ietf
+  type: dir
+  status: active
+  mailing_list: aaa-doctors@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/aaa-doctors/
+- abbreviation: artart
+  name: ART Area Review Team
+  organization: ietf
+  type: dir
+  status: active
+  mailing_list: christian%40amsuess.com
+- abbreviation: dnsdir
+  name: DNS Directorate
+  organization: ietf
+  type: dir
+  status: active
+  mailing_list: madi%40juicybun.cn
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/dnsdir/
+- abbreviation: eodir
+  name: Education and Outreach Directorate
+  organization: ietf
+  type: dir
+  status: active
+  mailing_list: eodir@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/eodir/
+- abbreviation: genart
+  name: General Area Review Team (Gen-ART)
+  organization: ietf
+  type: dir
+  status: active
+  mailing_list: skh%40ndzh.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/gen-art
+- abbreviation: httpdir
+  name: HTTP Directorate
+  organization: ietf
+  type: dir
+  status: active
+  mailing_list: mnot%40mnot.net
+- abbreviation: intdir
+  name: Internet Area Directorate
+  organization: ietf
+  type: dir
+  status: active
+  mailing_list: debcooley1%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/int-dir/
+- abbreviation: iotdir
+  name: Internet of Things Directorate
+  organization: ietf
+  type: dir
+  status: active
+  mailing_list: evyncke%40cisco.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/iot-directorate/
+- abbreviation: mibdoctors
+  name: MIB Doctors
+  organization: ietf
+  type: dir
+  status: active
+  mailing_list: mib-doctors@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/mib-doctors/
+- abbreviation: opsdir
+  name: Ops Directorate
+  organization: ietf
+  type: dir
+  status: active
+  mailing_list: nagendrakumar.nainar%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/ops-dir/
+- abbreviation: perfmetrdir
+  name: Performance Metrics Directorate
+  organization: ietf
+  type: dir
+  status: active
+  mailing_list: pm-dir@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/pm-dir/
+- abbreviation: rtgdir
+  name: Routing Area Directorate
+  organization: ietf
+  type: dir
+  status: active
+  mailing_list: skh%40ndzh.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/rtg-dir/
+- abbreviation: sdpdir
+  name: SDP Directorate
+  organization: ietf
+  type: dir
+  status: active
+  mailing_list: mmusic@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/mmusic/
+- abbreviation: secdir
+  name: Security Area Directorate
+  organization: ietf
+  type: dir
+  status: active
+  mailing_list: skh%40ndzh.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/secdir/
+- abbreviation: tsvart
+  name: Transport Area Review Team
+  organization: ietf
+  type: dir
+  status: active
+  mailing_list: tuexen%40fh-muenster.de
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/tsv-art/
+- abbreviation: yangdoctors
+  name: YANG Doctors
+  organization: ietf
+  type: dir
+  status: active
+  mailing_list: lberger%40labn.net
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/yang-doctors/
+- abbreviation: artart
+  name: ART Area Review Team
+  organization: ietf
+  type: review
+  status: active
+  mailing_list: christian%40amsuess.com
+- abbreviation: dnsdir
+  name: DNS Directorate
+  organization: ietf
+  type: review
+  status: active
+  mailing_list: madi%40juicybun.cn
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/dnsdir/
+- abbreviation: genart
+  name: General Area Review Team (Gen-ART)
+  organization: ietf
+  type: review
+  status: active
+  mailing_list: skh%40ndzh.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/gen-art
+- abbreviation: httpdir
+  name: HTTP Directorate
+  organization: ietf
+  type: review
+  status: active
+  mailing_list: mnot%40mnot.net
+- abbreviation: intdir
+  name: Internet Area Directorate
+  organization: ietf
+  type: review
+  status: active
+  mailing_list: debcooley1%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/int-dir/
+- abbreviation: iotdir
+  name: Internet of Things Directorate
+  organization: ietf
+  type: review
+  status: active
+  mailing_list: evyncke%40cisco.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/iot-directorate/
+- abbreviation: opsdir
+  name: Ops Directorate
+  organization: ietf
+  type: review
+  status: active
+  mailing_list: nagendrakumar.nainar%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/ops-dir/
+- abbreviation: rtgdir
+  name: Routing Area Directorate
+  organization: ietf
+  type: review
+  status: active
+  mailing_list: skh%40ndzh.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/rtg-dir/
+- abbreviation: secdir
+  name: Security Area Directorate
+  organization: ietf
+  type: review
+  status: active
+  mailing_list: skh%40ndzh.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/secdir/
+- abbreviation: tsvart
+  name: Transport Area Review Team
+  organization: ietf
+  type: review
+  status: active
+  mailing_list: tuexen%40fh-muenster.de
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/tsv-art/
+- abbreviation: yangdoctors
+  name: YANG Doctors
+  organization: ietf
+  type: review
+  status: active
+  mailing_list: lberger%40labn.net
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/yang-doctors/
+- abbreviation: eimpact
+  name: Environmental Impacts of Internet Technology
+  organization: ietf
+  type: iabasg
+  status: active
+  mailing_list: e-impact@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/e-impact/
+- abbreviation: edm
+  name: Evolvability, Deployability, & Maintainability
+  organization: ietf
+  type: iabasg
+  status: active
+  mailing_list: edm@iab.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/edm/
+- abbreviation: iabisoc
+  name: IAB-ISOC Policy Coordination
+  organization: ietf
+  type: iabasg
+  status: active
+  mailing_list: iab-isoc@iab.org
+- abbreviation: ietf3gpp
+  name: IETF-3GPP
+  organization: ietf
+  type: iabasg
+  status: active
+  mailing_list: tools-help@ietf.org
+- abbreviation: ietfiana
+  name: IETF-IANA
+  organization: ietf
+  type: iabasg
+  status: active
+  mailing_list: tools-help@ietf.org
+- abbreviation: ietfieee
+  name: IETF-IEEE
+  organization: ietf
+  type: iabasg
+  status: active
+  mailing_list: ieee-ietf-coord@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/ieee-ietf-coord/
+- abbreviation: ietfw3c
+  name: IETF-W3C
+  organization: ietf
+  type: iabasg
+  status: active
+  mailing_list: w3c-ietf-coord@ietf.org
+- abbreviation: eimpact
+  name: Environmental Impacts of Internet Technology
+  organization: ietf
+  type: program
+  status: active
+  mailing_list: e-impact@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/e-impact/
+- abbreviation: edm
+  name: Evolvability, Deployability, & Maintainability
+  organization: ietf
+  type: program
+  status: active
+  mailing_list: edm@iab.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/edm/
+- abbreviation: iabisoc
+  name: IAB-ISOC Policy Coordination
+  organization: ietf
+  type: program
+  status: active
+  mailing_list: iab-isoc@iab.org
+- abbreviation: ietf3gpp
+  name: IETF-3GPP
+  organization: ietf
+  type: program
+  status: active
+  mailing_list: tools-help@ietf.org
+- abbreviation: ietfiana
+  name: IETF-IANA
+  organization: ietf
+  type: program
+  status: active
+  mailing_list: tools-help@ietf.org
+- abbreviation: ietfieee
+  name: IETF-IEEE
+  organization: ietf
+  type: program
+  status: active
+  mailing_list: ieee-ietf-coord@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/ieee-ietf-coord/
+- abbreviation: ietfw3c
+  name: IETF-W3C
+  organization: ietf
+  type: program
+  status: active
+  mailing_list: w3c-ietf-coord@ietf.org
+- abbreviation: anrw
+  name: ACM/IRTF Applied Networking Research Workshop
+  organization: ietf
+  type: rag
+  status: active
+  mailing_list: tools-help@ietf.org
+- abbreviation: irtfopen
+  name: IRTF Open Meeting
+  organization: ietf
+  type: rag
+  status: active
+  mailing_list: irtf-discuss@irtf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/irtf-discuss/
+- abbreviation: cfrg
+  name: Crypto Forum
+  organization: ietf
+  type: rg
+  status: active
+  mailing_list: smyshsv%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/cfrg
+- abbreviation: coinrg
+  name: Computing in the Network Research Group
+  organization: ietf
+  type: rg
+  status: active
+  mailing_list: jefhe%40foxmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/coin/
+- abbreviation: dinrg
+  name: Decentralization of the Internet Research Group
+  organization: ietf
+  type: rg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/din/
+- abbreviation: gaia
+  name: Global Access to the Internet for All
+  organization: ietf
+  type: rg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/gaia
+- abbreviation: hrpc
+  name: Human Rights Protocol Considerations
+  organization: ietf
+  type: rg
+  status: active
+  mailing_list: ndoty%40cdt.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/hrpc
+- abbreviation: iccrg
+  name: Internet Congestion Control
+  organization: ietf
+  type: rg
+  status: active
+  mailing_list: vidhi_goel%40apple.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/iccrg
+- abbreviation: icnrg
+  name: Information-Centric Networking
+  organization: ietf
+  type: rg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/icnrg
+- abbreviation: maprg
+  name: Measurement and Analysis for Protocols
+  organization: ietf
+  type: rg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/maprg
+- abbreviation: nmrg
+  name: Network Management
+  organization: ietf
+  type: rg
+  status: active
+  mailing_list: Laurent.Ciavaglia%40nokia.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/nmrg
+- abbreviation: panrg
+  name: Path Aware Networking RG
+  organization: ietf
+  type: rg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/panrg
+- abbreviation: pearg
+  name: Privacy Enhancements and Assessments Research Group
+  organization: ietf
+  type: rg
+  status: active
+  mailing_list: shivankaulsahib%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/pearg/
+- abbreviation: qirg
+  name: Quantum Internet Research Group
+  organization: ietf
+  type: rg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/qirg
+- abbreviation: rasprg
+  name: Research and Analysis of Standard-Setting Processes Research Group
+  organization: ietf
+  type: rg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/rasprg/
+- abbreviation: sustain
+  name: Sustainability and the Internet Proposed Research Group
+  organization: ietf
+  type: rg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/sustain/
+- abbreviation: t2trg
+  name: Thing-to-Thing
+  organization: ietf
+  type: rg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/t2trg
+- abbreviation: ufmrg
+  name: Usable Formal Methods Research Group
+  organization: ietf
+  type: rg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/ufmrg
+- abbreviation: ccg
+  name: Community Coordination Group
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: ccg@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/ccg/
+- abbreviation: escapews
+  name: Exploring Synergy between Content Aggregation and the Publisher Ecosystem
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: escape-workshop-pc@iab.org
+- abbreviation: hackathon
+  name: Hackathon
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: hackathon@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/hackathon
+- abbreviation: hotrfc
+  name: Hot RFC Lightning Talks
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: hotrfc@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/hotrfc/
+- abbreviation: ccirtcws
+  name: IAB/IRTF Workshop on Congestion Control for Interactive Real-Time Communication
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: mary.ietf.barnes@gmail.com
+- abbreviation: dedrws
+  name: 'IAB Workshop: Design Expectations vs Deployment Reality in Protocol Development'
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: dedr-pc@iab.org
+- abbreviation: aicontrolws
+  name: IAB Workshop on AI-CONTROL
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: ai-control-workshop-pc@iab.org
+- abbreviation: aidws
+  name: IAB Workshop on Analyzing IETF Data
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: aid-workshop-pc@iab.org
+- abbreviation: biasws
+  name: IAB Workshop on Barriers to Internet Access of  Services (BIAS)
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: bias-workshop-pc@iab.org
+- abbreviation: carisws
+  name: IAB Workshop on Coordinating Attack Response at Internet Scale
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: tools-help@ietf.org
+- abbreviation: covid19ws
+  name: IAB Workshop on COVID-19 Network Impacts
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: covidimpacts-workshop-pc@iab.org
+- abbreviation: eimpactws
+  name: IAB workshop on Environmental Impact of Internet Applications and Systems
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: e-impact-workshop-attendees@iab.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/e-impact-workshop-attendees/
+- abbreviation: enamews
+  name: IAB Workshop on Explicit Internet Naming Systems
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: tools-help@ietf.org
+- abbreviation: smartobjectsws
+  name: IAB Workshop on Interconnecting Smart Objects with the Internet
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: tools-help@ietf.org
+- abbreviation: iotsuws
+  name: IAB Workshop on Internet of Things Software Update
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: tools-help@ietf.org
+- abbreviation: privacyws
+  name: IAB Workshop on Internet Privacy
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: tools-help@ietf.org
+- abbreviation: itatws
+  name: IAB Workshop on Internet Technology Adoption and Transition
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: tools-help@ietf.org
+- abbreviation: iotsiws
+  name: IAB Workshop on IoT Semantic Interoperability
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: tools-help@ietf.org
+- abbreviation: mtenws
+  name: IAB workshop on Management Techniques in Encrypted Networks (M-TEN)
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: mten-workshop@iab.org
+- abbreviation: marnewws
+  name: IAB Workshop on Managing Radio Networks in an Encrypted World
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: tools-help@ietf.org
+- abbreviation: mnqeuws
+  name: IAB Workshop on Measuring Network Quality for End-Users
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: network-quality-workshop-pc@iab.org
+- abbreviation: netmanws
+  name: IAB Workshop on Network Management
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: tools-help@ietf.org
+- abbreviation: rtgadrws
+  name: IAB Workshop on Routing and Addressing
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: tools-help@ietf.org
+- abbreviation: semiws
+  name: IAB Workshop on Stack Evolution in a Middlebox Internet
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: tools-help@ietf.org
+- abbreviation: nemopsws
+  name: IAB workshop on the Next Era of Network Management Operations
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: nemops-interest@iab.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/nemops-interest/
+- abbreviation: unwantedtrafficws
+  name: IAB Workshop on Unwanted Traffic
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: tools-help@ietf.org
+- abbreviation: wirelessws
+  name: IAB Workshop on Wireless Internetworking
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: tools-help@ietf.org
+- abbreviation: iepg
+  name: IEPG - Internet Engineering and Planning Group
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: tools-help@ietf.org
+- abbreviation: moderators
+  name: IETF discussion list moderators
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: moderators@ietf.org
+- abbreviation: guides
+  name: IETF Guides
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: tools-help@ietf.org
+- abbreviation: llc-comms
+  name: IETF LLC Comms
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: tools-help@ietf.org
+- abbreviation: newparticipant
+  name: New Participant Program
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: tools-help@ietf.org
+- abbreviation: rpat
+  name: RFC Production Advisory Team
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: rpat@rfc-editor.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/rpat
+- abbreviation: systers
+  name: Systers
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: systers@ietf.org
+- abbreviation: tdd
+  name: Technology Deep Dive
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: tdd@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/tdd/
+- abbreviation: tools
+  name: The Tools Team
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: tools-discuss@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/tools-discuss/
+- abbreviation: strintws
+  name: W3C/IAB workshop on Strengthening the Internet Against Pervasive Monitoring
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: group-strint-submission@w3.org
+- abbreviation: ycsupport
+  name: YangCatalog Support
+  organization: ietf
+  type: team
+  status: active
+  mailing_list: tools-help@ietf.org
+- abbreviation: asap
+  name: Andy Newton
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: superuser%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/asap/
+- abbreviation: asdf
+  name: Orie Steele
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: francesca.palombini%40ericsson.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/asdf/
+- abbreviation: calext
+  name: Orie Steele
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: orie%40or13.io
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/calsify/
+- abbreviation: cbor
+  name: Andy Newton
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: cabo%40tzi.org
+- abbreviation: cellar
+  name: Orie Steele
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: alexey.melnikov%40isode.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/cellar/
+- abbreviation: dispatch
+  name: Orie Steele
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: francesca.palombini%40ericsson.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/dispatch/
+- abbreviation: dkim
+  name: Andy Newton
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: housley%40vigilsec.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/ietf-dkim/
+- abbreviation: ecrit
+  name: Andy Newton
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: superuser%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/ecrit/
+- abbreviation: emailcore
+  name: Andy Newton
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: andy%40hxr.us
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/emailcore/
+- abbreviation: jmap
+  name: Andy Newton
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: superuser%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/jmap
+- abbreviation: mailmaint
+  name: Andy Newton
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: fenton%40bluepopcorn.net
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/mailmaint/
+- abbreviation: mediaman
+  name: Andy Newton
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: superuser%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/media-types/
+- abbreviation: mimi
+  name: Orie Steele
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/mimi/
+- abbreviation: mlcodec
+  name: Orie Steele
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/mlcodec/
+- abbreviation: regext
+  name: Orie Steele
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: orie%40or13.io
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/regext/
+- abbreviation: rpp
+  name: Orie Steele
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/rpp
+- abbreviation: satp
+  name: Orie Steele
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/sat/
+- abbreviation: sipcore
+  name: Andy Newton
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: superuser%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/sipcore/
+- abbreviation: sml
+  name: Andy Newton
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: arnt%40gulbrandsen.priv.no
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/sml/
+- abbreviation: stir
+  name: Orie Steele
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: orie%40or13.io
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/stir/
+- abbreviation: vcon
+  name: Andy Newton
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/vcon/
+- abbreviation: wimse
+  name: Orie Steele
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/wimse/
+- abbreviation: gendispatch
+  name: Roman Danyliw
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: rwilton%40cisco.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/gendispatch/
+- abbreviation: ianabis
+  name: Roman Danyliw
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/ianabis/
+- abbreviation: modpod
+  name: Roman Danyliw
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/mod-discuss/
+- abbreviation: 6lo
+  name: Éric Vyncke
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: carles.gomez%40upc.edu
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/6lo/
+- abbreviation: 6man
+  name: Erik Kline
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: ek.ietf%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/ipv6/
+- abbreviation: add
+  name: Éric Vyncke
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: evyncke%40cisco.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/add/
+- abbreviation: bpf
+  name: Erik Kline
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: ek.ietf%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/bpf/
+- abbreviation: deleg
+  name: Éric Vyncke
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/dd/
+- abbreviation: dhc
+  name: Éric Vyncke
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: bevolz%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/dhcwg/
+- abbreviation: dmm
+  name: Erik Kline
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: brian%40innovationslab.net
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/dmm/
+- abbreviation: dnssd
+  name: Éric Vyncke
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: evyncke%40cisco.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/dnssd/
+- abbreviation: dprive
+  name: Éric Vyncke
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: terry.manderson%40icann.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/dns-privacy/
+- abbreviation: drip
+  name: Éric Vyncke
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: adam.wiethuechter%40axenterprize.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/tm-rid/
+- abbreviation: dtn
+  name: Erik Kline
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: ek.ietf%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/dtn/
+- abbreviation: intarea
+  name: Éric Vyncke
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: jari.arkko%40ericsson.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/int-area/
+- abbreviation: madinas
+  name: Éric Vyncke
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: evyncke%40cisco.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/madinas/
+- abbreviation: ntp
+  name: Erik Kline
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: ek.ietf%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/ntp/
+- abbreviation: schc
+  name: Éric Vyncke
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/schc/
+- abbreviation: snac
+  name: Éric Vyncke
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: tim%40qacafe.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/snac/
+- abbreviation: tiptop
+  name: Éric Vyncke
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/deepspace
+- abbreviation: anima
+  name: Mahesh Jethanandani
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: mjethanandani%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/anima/
+- abbreviation: bmwg
+  name: Mohamed Boucadair
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: giuseppe.fioccola%40huawei.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/bmwg/
+- abbreviation: dnsop
+  name: Mohamed Boucadair
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: warren%40kumari.net
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/dnsop/
+- abbreviation: green
+  name: Mahesh Jethanandani
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/green/
+- abbreviation: grow
+  name: Mohamed Boucadair
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: job%40fastly.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/grow/
+- abbreviation: iotops
+  name: Mohamed Boucadair
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: henk.birkholz%40ietf.contact
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/iotops/
+- abbreviation: ippm
+  name: Mohamed Boucadair
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: mohamed.boucadair%40orange.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/ippm/
+- abbreviation: ivy
+  name: Mahesh Jethanandani
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/inventory-yang/
+- abbreviation: mboned
+  name: Mohamed Boucadair
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: rbonica%40juniper.net
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/mboned/
+- abbreviation: mops
+  name: Éric Vyncke
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: evyncke%40cisco.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/mops/
+- abbreviation: netconf
+  name: Mahesh Jethanandani
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: paolo%40ntt.net
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/netconf/
+- abbreviation: netmod
+  name: Mahesh Jethanandani
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: mjethanandani%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/netmod/
+- abbreviation: nmop
+  name: Mahesh Jethanandani
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: benoit.claise%40huawei.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/nmop/
+- abbreviation: opsawg
+  name: Mahesh Jethanandani
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: mjethanandani%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/opsawg/
+- abbreviation: sidrops
+  name: Mohamed Boucadair
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: warren%40kumari.net
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/sidrops/
+- abbreviation: srv6ops
+  name: Jim Guichard
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/srv6ops/
+- abbreviation: v6ops
+  name: Mohamed Boucadair
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: tim%40qacafe.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/v6ops/
+- abbreviation: babel
+  name: Gunter Van de Velde
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: martin.vigoureux%40nokia.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/babel/
+- abbreviation: bess
+  name: Gunter Van de Velde
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: gunter%40vandevelde.cc
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/bess/
+- abbreviation: bfd
+  name: Ketan Talaulikar
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: evyncke%40cisco.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/rtg-bfd/
+- abbreviation: bier
+  name: Gunter Van de Velde
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: d3e3e3%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/bier/
+- abbreviation: cats
+  name: Jim Guichard
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/cats/
+- abbreviation: ccamp
+  name: Ketan Talaulikar
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: jgs%40juniper.net
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/ccamp/
+- abbreviation: detnet
+  name: Ketan Talaulikar
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: lberger%40labn.net
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/detnet/
+- abbreviation: idr
+  name: Ketan Talaulikar
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: jgs%40juniper.net
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/idr/
+- abbreviation: lisp
+  name: Jim Guichard
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: james.n.guichard%40futurewei.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/lisp/
+- abbreviation: lsr
+  name: Gunter Van de Velde
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: gunter%40vandevelde.cc
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/lsr/
+- abbreviation: lsvr
+  name: Ketan Talaulikar
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: james.n.guichard%40futurewei.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/lsvr/
+- abbreviation: manet
+  name: Jim Guichard
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: james.n.guichard%40futurewei.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/manet/
+- abbreviation: mpls
+  name: Jim Guichard
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: james.n.guichard%40futurewei.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/mpls/
+- abbreviation: nvo3
+  name: Gunter Van de Velde
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: gunter%40vandevelde.cc
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/nvo3/
+- abbreviation: pals
+  name: Gunter Van de Velde
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: gunter%40vandevelde.cc
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/pals/
+- abbreviation: pce
+  name: Ketan Talaulikar
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: jgs%40juniper.net
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/pce/
+- abbreviation: pim
+  name: Gunter Van de Velde
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: gunter%40vandevelde.cc
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/pim/
+- abbreviation: rift
+  name: Jim Guichard
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: james.n.guichard%40futurewei.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/rift
+- abbreviation: roll
+  name: Ketan Talaulikar
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: jgs%40juniper.net
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/roll/
+- abbreviation: rtgwg
+  name: Jim Guichard
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: yingzhen.ietf%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/rtgwg/
+- abbreviation: savnet
+  name: Jim Guichard
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: james.n.guichard%40futurewei.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/savnet/
+- abbreviation: spring
+  name: Jim Guichard
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: liu.yao71%40zte.com.cn
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/spring/
+- abbreviation: teas
+  name: Jim Guichard
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: oscar.gonzalezdedios%40telefonica.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/teas/
+- abbreviation: tvr
+  name: Gunter Van de Velde
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: edward.birrane%40jhuapl.edu
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/tvr/
+- abbreviation: ace
+  name: Paul Wouters
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: marco.tiloca%40ri.se
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/ace/
+- abbreviation: acme
+  name: Deb Cooley
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: debcooley1%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/acme/
+- abbreviation: cose
+  name: Paul Wouters
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: paul.wouters%40aiven.io
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/cose/
+- abbreviation: dance
+  name: Paul Wouters
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: mcr%2Bietf%40sandelman.ca
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/dance/
+- abbreviation: dult
+  name: Deb Cooley
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/unwanted-trackers/
+- abbreviation: emu
+  name: Paul Wouters
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: paul.wouters%40aiven.io
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/emu
+- abbreviation: ipsecme
+  name: Deb Cooley
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: debcooley1%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/ipsec/
+- abbreviation: jose
+  name: Deb Cooley
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: debcooley1%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/jose/
+- abbreviation: keytrans
+  name: Deb Cooley
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/keytrans/
+- abbreviation: kitten
+  name: Paul Wouters
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: ekr%40rtfm.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/kitten/
+- abbreviation: lake
+  name: Paul Wouters
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: paul.wouters%40aiven.io
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/lake/
+- abbreviation: lamps
+  name: Deb Cooley
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: debcooley1%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/spasm/
+- abbreviation: mls
+  name: Paul Wouters
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: paul.wouters%40aiven.io
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/mls/
+- abbreviation: oauth
+  name: Deb Cooley
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: debcooley1%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/oauth/
+- abbreviation: ohai
+  name: Mike Bishop
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: superuser%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/ohai/
+- abbreviation: openpgp
+  name: Paul Wouters
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: hartmans-ietf%40mit.edu
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/openpgp/
+- abbreviation: ppm
+  name: Deb Cooley
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/ppm/
+- abbreviation: pquip
+  name: Paul Wouters
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: paul.wouters%40aiven.io
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/pqc/
+- abbreviation: privacypass
+  name: Paul Wouters
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: jsalowey%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/privacy-pass/
+- abbreviation: radext
+  name: Paul Wouters
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: paul.wouters%40aiven.io
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/radext/
+- abbreviation: rats
+  name: Deb Cooley
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: rdd%40cert.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/rats/
+- abbreviation: scim
+  name: Deb Cooley
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: matt.peterson%40entrust.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/scim/
+- abbreviation: scitt
+  name: Deb Cooley
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/scitt/
+- abbreviation: secdispatch
+  name: Paul Wouters
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/secdispatch/
+- abbreviation: spice
+  name: Paul Wouters
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/spice/
+- abbreviation: sshm
+  name: Deb Cooley
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/ssh/
+- abbreviation: suit
+  name: Deb Cooley
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: debcooley1%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/suit
+- abbreviation: teep
+  name: Paul Wouters
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: paul.wouters%40aiven.io
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/teep/
+- abbreviation: tls
+  name: Paul Wouters
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: paul.wouters%40aiven.io
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/tls/
+- abbreviation: uta
+  name: Paul Wouters
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: paul.wouters%40aiven.io
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/uta/
+- abbreviation: aipref
+  name: Mike Bishop
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/ai-control/
+- abbreviation: avtcore
+  name: Gorry Fairhurst
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: zahed.sarker.ietf%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/avt/
+- abbreviation: ccwg
+  name: Gorry Fairhurst
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: zahed.sarker.ietf%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/ccwg/
+- abbreviation: cdni
+  name: Gorry Fairhurst
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: francesca.palombini%40ericsson.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/cdni/
+- abbreviation: core
+  name: Mike Bishop
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: francesca.palombini%40ericsson.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/core/
+- abbreviation: happy
+  name: Gorry Fairhurst
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/happy/
+- abbreviation: httpapi
+  name: Mike Bishop
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: francesca.palombini%40ericsson.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/httpapi/
+- abbreviation: httpbis
+  name: Mike Bishop
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: francesca.palombini%40ericsson.com
+- abbreviation: masque
+  name: Mike Bishop
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: martin.h.duke%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/masque/
+- abbreviation: moq
+  name: Mike Bishop
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/moq/
+- abbreviation: nfsv4
+  name: Gorry Fairhurst
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: zahed.sarker.ietf%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/nfsv4/
+- abbreviation: quic
+  name: Gorry Fairhurst
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: lucas%40lucaspardue.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/quic/
+- abbreviation: scone
+  name: Gorry Fairhurst
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/scone
+- abbreviation: tcpm
+  name: Gorry Fairhurst
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: zahed.sarker.ietf%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/tcpm/
+- abbreviation: tsvwg
+  name: Gorry Fairhurst
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: martenseemann%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/tsvwg/
+- abbreviation: webtrans
+  name: Mike Bishop
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: tools-help@ietf.org
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/webtransport/
+- abbreviation: wish
+  name: Mike Bishop
+  organization: ietf
+  type: wg
+  status: active
+  mailing_list: superuser%40gmail.com
+  mailing_list_archive: https://mailarchive.ietf.org/arch/browse/wish/
+- abbreviation: CFRG
+  name: CFRG
+  organization: irtf
+  type: rg
+  status: active
+  chairs:
+  - ''
+  mailing_list: cfrg@irtf.org
+  website_url: https://www.irtf.org/cfrg.html
+- abbreviation: COINRG
+  name: COINRG
+  organization: irtf
+  type: rg
+  status: active
+  chairs:
+  - ''
+  mailing_list: coin@irtf.org
+  website_url: https://www.irtf.org/coinrg.html
+- abbreviation: DINRG
+  name: DINRG
+  organization: irtf
+  type: rg
+  status: active
+  chairs:
+  - ''
+  mailing_list: din@irtf.org
+  website_url: https://www.irtf.org/dinrg.html
+- abbreviation: GAIA
+  name: GAIA
+  organization: irtf
+  type: rg
+  status: active
+  chairs:
+  - ''
+  mailing_list: gaia@irtf.org
+  website_url: https://www.irtf.org/gaia.html
+- abbreviation: HRPC
+  name: HRPC
+  organization: irtf
+  type: rg
+  status: active
+  chairs:
+  - ''
+  mailing_list: hrpc@irtf.org
+  website_url: https://www.irtf.org/hrpc.html
+- abbreviation: ICCRG
+  name: ICCRG
+  organization: irtf
+  type: rg
+  status: active
+  chairs:
+  - ''
+  mailing_list: iccrg@irtf.org
+  website_url: https://www.irtf.org/iccrg.html
+- abbreviation: ICNRG
+  name: ICNRG
+  organization: irtf
+  type: rg
+  status: active
+  chairs:
+  - ''
+  mailing_list: icnrg@irtf.org
+  website_url: https://www.irtf.org/icnrg.html
+- abbreviation: MAPRG
+  name: MAPRG
+  organization: irtf
+  type: rg
+  status: active
+  chairs:
+  - ''
+  mailing_list: maprg@irtf.org
+  website_url: https://www.irtf.org/maprg.html
+- abbreviation: NMRG
+  name: NMRG
+  organization: irtf
+  type: rg
+  status: active
+  chairs:
+  - ''
+  mailing_list: nmrg@irtf.org
+  website_url: https://www.irtf.org/nmrg.html
+- abbreviation: PANRG
+  name: PANRG
+  organization: irtf
+  type: rg
+  status: active
+  chairs:
+  - ''
+  mailing_list: panrg@irtf.org
+  website_url: https://www.irtf.org/panrg.html
+- abbreviation: PEARG
+  name: PEARG
+  organization: irtf
+  type: rg
+  status: active
+  chairs:
+  - ''
+  mailing_list: pearg@irtf.org
+  website_url: https://www.irtf.org/pearg.html
+- abbreviation: QIRG
+  name: QIRG
+  organization: irtf
+  type: rg
+  status: active
+  chairs:
+  - ''
+  mailing_list: qirg@irtf.org
+  website_url: https://www.irtf.org/qirg.html
+- abbreviation: RASPRG
+  name: RASPRG
+  organization: irtf
+  type: rg
+  status: active
+  chairs:
+  - ''
+  mailing_list: rasprg@irtf.org
+  website_url: https://www.irtf.org/rasprg.html
+- abbreviation: SUSTAIN
+  name: SUSTAIN
+  organization: irtf
+  type: rg
+  status: active
+  chairs:
+  - ''
+  mailing_list: sustain@irtf.org
+  website_url: https://www.irtf.org/sustain.html
+- abbreviation: T2TRG
+  name: T2TRG
+  organization: irtf
+  type: rg
+  status: active
+  chairs:
+  - ''
+  mailing_list: t2trg@irtf.org
+  website_url: https://www.irtf.org/t2trg.html
+- abbreviation: UFMRG
+  name: UFMRG
+  organization: irtf
+  type: rg
+  status: active
+  chairs:
+  - ''
+  mailing_list: ufmrg@irtf.org
+  website_url: https://www.irtf.org/ufmrg.html
+- abbreviation: GROUPS
+  name: All Research Groups
+  organization: irtf
+  type: rg
+  status: active
+  chairs:
+  - ''
+  website_url: https://www.irtf.org/groups.html
+  charter_url: https://datatracker.ietf.org/group/chartering/

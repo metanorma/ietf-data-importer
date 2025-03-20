@@ -19,6 +19,11 @@ Gem::Specification.new do |spec|
   spec.license       = "BSD-2-Clause"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.5.0")
 
+  spec.add_dependency "lutaml-model", "~> 0.1"
+  spec.add_dependency "thor", "~> 1.0"
+  spec.add_dependency "nokogiri", "~> 1.12"
+  spec.add_dependency "yaml", "~> 0.2"
+
   spec.files = Dir.chdir(File.expand_path(__dir__)) do
     `git ls-files -z`.split("\x0").reject do |f|
       f.match(%r{\A(?:test|spec|features)/})
