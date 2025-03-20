@@ -7,7 +7,8 @@ image:https://img.shields.io/github/commits-since/metanorma/ietf-data-importer/l
 
 == Purpose
 
-IETF Data Importer is a Ruby gem providing access to information about IETF working groups and IRTF research groups.
+IETF Data Importer is a Ruby gem providing access to information about IETF
+working groups and IRTF research groups.
 
 It includes:
 
@@ -20,29 +21,6 @@ This gem exists because the official sources often change their layout or may be
 * https://datatracker.ietf.org/group/ (formerly tools.ietf.org/wg)
 * https://irtf.org/groups
 
-== Migration from metanorma-ietf-data
-
-This gem is the renamed and restructured version of `metanorma-ietf-data`. The namespace and file structure have been changed to match other Metanorma data importer gems.
-
-To migrate from metanorma-ietf-data:
-
-. Replace the following:
-+
-[source,diff]
-----
-- require "metanorma/ietf/data"
-- groups = Metanorma::Ietf::Data.groups
-+ require "ietf/data/importer"
-+ groups = Ietf::Data::Importer.groups
-----
-
-. Update your Gemfile:
-+
-[source,diff]
-----
-- gem 'metanorma-ietf-data'
-+ gem 'ietf-data-importer'
-----
 
 == Installation
 
@@ -210,6 +188,36 @@ groups:
   charter_url: https://datatracker.ietf.org/wg/httpbis/about/
 ----
 ====
+
+== Migration from metanorma-ietf-data
+
+The versions 0.1.0 and 0.2.0 of this gem were published under the name
+`metanorma-ietf-data`.
+
+The gem was rewritten and republished as `ietf-data-importer` to better reflect
+its purpose at version 0.3.0. The namespace and file structure have been changed
+to match other Metanorma data importer gems.
+
+To migrate from metanorma-ietf-data:
+
+. Replace the following:
++
+[source,diff]
+----
+- require "metanorma/ietf/data"
+- groups = Metanorma::Ietf::Data.groups
++ require "ietf/data/importer"
++ groups = Ietf::Data::Importer.groups
+----
+
+. Update your Gemfile:
++
+[source,diff]
+----
+- gem 'metanorma-ietf-data'
++ gem 'ietf-data-importer'
+----
+
 
 == Copyright
 
