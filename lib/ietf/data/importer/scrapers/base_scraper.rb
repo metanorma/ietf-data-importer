@@ -2,29 +2,38 @@
 
 require "nokogiri"
 require "open-uri"
+require_relative "../group"
+require_relative "../group_collection"
 
 module Ietf
   module Data
     module Importer
       module Scrapers
-        # Base class for web scrapers
         class BaseScraper
-          # Fetch HTML content from a URL and parse it with Nokogiri
-          # @param url [String] The URL to fetch
-          # @return [Nokogiri::HTML::Document] The parsed HTML document
+          def fetch
+            raise NotImplementedError, "#{self.class}#fetch must be implemented"
+          end
+
           def fetch_html(url)
             Nokogiri::HTML(URI.open(url))
-          rescue => e
-            puts "  Error fetching URL #{url}: #{e.message}"
+          rescue StandardError => e
+            log "Error fetching URL #{url}: #{e.message}"
             nil
           end
 
-          # Log a message with indentation
-          # @param message [String] The message to log
-          # @param level [Integer] The indentation level (default: 0)
           def log(message, level = 0)
             indent = "  " * level
             puts "#{indent}#{message}"
+          end
+
+          private
+
+          def build_group(attributes)
+            Group.new(attributes)
+          end
+
+          def build_collection(groups)
+            GroupCollection.new(groups: groups)
           end
         end
       end
