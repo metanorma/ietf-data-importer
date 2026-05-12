@@ -1,2 +1,6 @@
 /.rubocop-https*
 /Gemfile.lock
+/.rspec_status
+/coverage/
+*.gem
+.DS_Store
