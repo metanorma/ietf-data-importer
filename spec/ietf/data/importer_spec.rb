@@ -1,123 +1,163 @@
 # frozen_string_literal: true
 
-require "yaml"
 require "ietf/data/importer"
 
 RSpec.describe Ietf::Data::Importer do
-  # Helper to get the path to our fixture files
-  def fixture_path(fixture_name = "ietf_groups.yaml")
-    spec_dir = File.expand_path(File.join(File.dirname(__FILE__), "..", ".."))
-    File.join(spec_dir, "fixtures", fixture_name)
+  let(:test_groups) do
+    [
+      Ietf::Data::Importer::Group.new(
+        abbreviation: "httpbis", name: "HTTP", organization: "ietf",
+        type: "wg", area: "ART", status: "active"
+      ),
+      Ietf::Data::Importer::Group.new(
+        abbreviation: "cfrg", name: "CFRG", organization: "irtf",
+        type: "rg", status: "active"
+      ),
+      Ietf::Data::Importer::Group.new(
+        abbreviation: "oldwg", name: "Old WG", organization: "ietf",
+        type: "wg", area: "OPS", status: "concluded"
+      ),
+    ]
   end
 
-  # Define fixture data with let
-  let(:ietf_groups_data) { YAML.load_file(fixture_path("ietf_groups.yaml")) }
-  let(:test_groups_data) { YAML.load_file(fixture_path("test_groups.yaml")) }
+  let(:test_collection) do
+    Ietf::Data::Importer::GroupCollection.new(groups: test_groups)
+  end
+
   it "has a version number" do
-    expect(Ietf::Data::Importer::VERSION).not_to be nil
+    expect(described_class::VERSION).to eq("0.3.0")
   end
 
-  context "with ietf_groups fixture" do
-    # Load data from the fixture instead of writing to disk
-    let(:groups_collection) do
-      # Use a stub to make the Importer use our fixture data
-      allow(Ietf::Data::Importer).to receive(:load_groups).and_return(
-        Ietf::Data::Importer::GroupCollection.new(groups: ietf_groups_data["groups"])
-      )
-      Ietf::Data::Importer.groups
-    end
-
+  describe "query delegation", :query_tests do
     before do
-      # Clear any cached groups that might be present
-      Ietf::Data::Importer.class_variable_set(:@@groups, nil) if Ietf::Data::Importer.class_variable_defined?(:@@groups)
-
-      # Set up the stub to use fixture data
-      allow(Ietf::Data::Importer).to receive(:load_groups).and_return(
-        Ietf::Data::Importer::GroupCollection.new(groups: ietf_groups_data["groups"])
-      )
+      allow(described_class).to receive(:collection).and_return(test_collection)
     end
 
-    it "loads groups successfully from fixture" do
-      expect(Ietf::Data::Importer.groups).not_to be_empty
+    describe ".collection" do
+      it "returns a GroupCollection" do
+        expect(described_class.collection).to be_a(Ietf::Data::Importer::GroupCollection)
+      end
     end
 
-    it "finds a group by abbreviation" do
-      expect(Ietf::Data::Importer.group_exists?("artart")).to be true
-      expect(Ietf::Data::Importer.find_group("artart")).not_to be nil
-      expect(Ietf::Data::Importer.find_group("artart").name).to eq("ART Area Review Team")
+    describe ".groups" do
+      it "returns all groups from the collection" do
+        expect(described_class.groups.size).to eq(3)
+      end
     end
 
-    it "supports filtering by organization" do
-      expect(Ietf::Data::Importer.ietf_groups).not_to be_empty
-      expect(Ietf::Data::Importer.ietf_groups.first.organization).to eq("ietf")
+    describe ".find_group" do
+      it "finds a group by abbreviation" do
+        group = described_class.find_group("httpbis")
+        expect(group.name).to eq("HTTP")
+      end
+
+      it "returns nil for missing group" do
+        expect(described_class.find_group("nonexistent")).to be_nil
+      end
     end
 
-    it "supports filtering by type" do
-      expect(Ietf::Data::Importer.working_groups).not_to be_empty
-      wg = Ietf::Data::Importer.working_groups.find { |g| g.type == "wg" }
-      expect(wg).not_to be_nil
+    describe ".group_exists?" do
+      it "returns true for existing group" do
+        expect(described_class.group_exists?("httpbis")).to be true
+      end
+
+      it "returns false for missing group" do
+        expect(described_class.group_exists?("nonexistent")).to be false
+      end
     end
 
-    it "supports filtering by status" do
-      expect(Ietf::Data::Importer.active_groups).not_to be_empty
-      expect(Ietf::Data::Importer.active_groups.first.status).to eq("active")
+    describe ".ietf_groups" do
+      it "returns a GroupCollection of IETF groups" do
+        result = described_class.ietf_groups
+        expect(result).to be_a(Ietf::Data::Importer::GroupCollection)
+        expect(result.groups).to all(satisfy(&:ietf?))
+      end
+    end
+
+    describe ".irtf_groups" do
+      it "returns a GroupCollection of IRTF groups" do
+        result = described_class.irtf_groups
+        expect(result).to be_a(Ietf::Data::Importer::GroupCollection)
+        expect(result.groups).to all(satisfy(&:irtf?))
+      end
+    end
+
+    describe ".working_groups" do
+      it "returns a GroupCollection of WGs" do
+        result = described_class.working_groups
+        expect(result).to be_a(Ietf::Data::Importer::GroupCollection)
+        expect(result.groups).to all(satisfy(&:working_group?))
+      end
+    end
+
+    describe ".research_groups" do
+      it "returns a GroupCollection of RGs" do
+        result = described_class.research_groups
+        expect(result).to be_a(Ietf::Data::Importer::GroupCollection)
+        expect(result.groups).to all(satisfy(&:research_group?))
+      end
+    end
+
+    describe ".groups_by_type" do
+      it "returns a GroupCollection filtered by type" do
+        result = described_class.groups_by_type("wg")
+        expect(result).to be_a(Ietf::Data::Importer::GroupCollection)
+        expect(result.size).to eq(2)
+      end
+    end
+
+    describe ".groups_by_area" do
+      it "returns a GroupCollection filtered by area" do
+        result = described_class.groups_by_area("ART")
+        expect(result).to be_a(Ietf::Data::Importer::GroupCollection)
+        expect(result.size).to eq(1)
+      end
+    end
+
+    describe ".active_groups" do
+      it "returns a GroupCollection of active groups" do
+        result = described_class.active_groups
+        expect(result).to be_a(Ietf::Data::Importer::GroupCollection)
+        expect(result.groups).to all(satisfy(&:active?))
+      end
+    end
+
+    describe ".concluded_groups" do
+      it "returns a GroupCollection of concluded groups" do
+        result = described_class.concluded_groups
+        expect(result).to be_a(Ietf::Data::Importer::GroupCollection)
+        expect(result.size).to eq(1)
+        expect(result.first.abbreviation).to eq("oldwg")
+      end
+    end
+
+    describe ".group_types" do
+      it "returns sorted unique types" do
+        expect(described_class.group_types).to eq(%w[rg wg])
+      end
+    end
+
+    describe ".areas" do
+      it "returns sorted unique areas" do
+        expect(described_class.areas).to eq(%w[ART OPS])
+      end
+    end
+
+    describe ".load_groups" do
+      it "returns the collection" do
+        expect(described_class.load_groups).to be_a(Ietf::Data::Importer::GroupCollection)
+      end
     end
   end
 
-  context "with test_groups fixture" do
-    before do
-      # Clear any cached groups that might be present
-      Ietf::Data::Importer.class_variable_set(:@@groups, nil) if Ietf::Data::Importer.class_variable_defined?(:@@groups)
+  describe ".reset!" do
+    after { described_class.reset! }
 
-      # Set up the stub to use test fixture data
-      allow(Ietf::Data::Importer).to receive(:load_groups).and_return(
-        Ietf::Data::Importer::GroupCollection.new(groups: test_groups_data["groups"])
-      )
-    end
-
-    it "loads test group successfully" do
-      expect(Ietf::Data::Importer.groups).not_to be_empty
-      expect(Ietf::Data::Importer.groups.first.name).to eq("Test Group")
-    end
-
-    it "finds test group by abbreviation" do
-      expect(Ietf::Data::Importer.group_exists?("testgroup")).to be true
-      expect(Ietf::Data::Importer.find_group("testgroup")).not_to be nil
-      expect(Ietf::Data::Importer.find_group("testgroup").description).to include("test group for command validation")
-    end
-  end
-
-  context "with direct fixture loading" do
-    # This demonstrates how to load a fixture directly without stubbing
-    let(:direct_collection) do
-      yaml_data = YAML.load_file(fixture_path("test_groups.yaml"))
-      Ietf::Data::Importer::GroupCollection.new(groups: yaml_data["groups"])
-    end
-
-    it "can load collection directly from fixture" do
-      expect(direct_collection.groups).not_to be_empty
-      expect(direct_collection.groups.first.abbreviation).to eq("testgroup")
-    end
-  end
-
-  context "without data file" do
-    before do
-      # Stub the load_groups method to return an empty collection
-      allow(Ietf::Data::Importer).to receive(:load_groups).and_return(
-        Ietf::Data::Importer::GroupCollection.new(groups: [])
-      )
-    end
-
-    it "returns empty groups" do
-      expect(Ietf::Data::Importer.groups).to be_empty
-    end
-
-    it "returns false for group_exists?" do
-      expect(Ietf::Data::Importer.group_exists?("any")).to be false
-    end
-
-    it "returns nil for find_group" do
-      expect(Ietf::Data::Importer.find_group("any")).to be nil
+    it "causes the next .collection call to create a new instance" do
+      first = described_class.collection
+      described_class.reset!
+      second = described_class.collection
+      expect(first).not_to equal(second)
     end
   end
 end
