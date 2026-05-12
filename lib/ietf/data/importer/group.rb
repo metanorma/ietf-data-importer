@@ -5,14 +5,17 @@ require "lutaml/model"
 module Ietf
   module Data
     module Importer
-      # Represents a single IETF or IRTF group
       class Group < Lutaml::Model::Serializable
+        ORGANIZATIONS = %w[ietf irtf].freeze
+        STATUSES = %w[active concluded bof proposed].freeze
+        TYPES = %w[wg rg area team program dir ag bof].freeze
+
         attribute :abbreviation, :string
         attribute :name, :string
-        attribute :organization, :string  # 'ietf' or 'irtf'
-        attribute :type, :string  # 'wg', 'rg', etc.
+        attribute :organization, :string
+        attribute :type, :string
         attribute :area, :string
-        attribute :status, :string, values: %w[active concluded bof proposed]
+        attribute :status, :string
         attribute :description, :string
         attribute :chairs, :string, collection: true
         attribute :mailing_list, :string
@@ -35,6 +38,38 @@ module Ietf
           map "website_url", to: :website_url
           map "charter_url", to: :charter_url
           map "concluded_date", to: :concluded_date
+        end
+
+        def active?
+          status == "active"
+        end
+
+        def concluded?
+          status == "concluded"
+        end
+
+        def bof?
+          status == "bof"
+        end
+
+        def proposed?
+          status == "proposed"
+        end
+
+        def ietf?
+          organization == "ietf"
+        end
+
+        def irtf?
+          organization == "irtf"
+        end
+
+        def working_group?
+          type == "wg"
+        end
+
+        def research_group?
+          type == "rg"
         end
       end
     end

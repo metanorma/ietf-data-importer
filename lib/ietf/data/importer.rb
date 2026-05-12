@@ -1,92 +1,82 @@
 # frozen_string_literal: true
 
 require "yaml"
-require_relative "importer/version"
-require_relative "importer/group_collection"
-require_relative "importer/scrapers"
-require_relative "importer/cli"
 
 module Ietf
   module Data
-    # Main module for IETF/IRTF group data importer
     module Importer
-      class Error < StandardError; end
+      autoload :VERSION, "#{__dir__}/importer/version"
+      autoload :Group, "#{__dir__}/importer/group"
+      autoload :GroupCollection, "#{__dir__}/importer/group_collection"
+      autoload :Cli, "#{__dir__}/importer/cli"
+      autoload :Scrapers, "#{__dir__}/importer/scrapers"
 
-      # Path to the groups data file
-      GROUPS_PATH = File.join(File.dirname(__FILE__), "importer", "groups.yaml")
+      GROUPS_PATH = File.join(__dir__, "importer", "groups.yaml")
 
-      # Load the groups if the file exists, otherwise return empty collection
-      def self.load_groups
-        if File.exist?(GROUPS_PATH)
-          GroupCollection.from_yaml(File.read(GROUPS_PATH))
-        else
-          GroupCollection.new(groups: [])
+      class << self
+        def collection
+          @collection ||= GroupCollection.from_file(GROUPS_PATH)
         end
-      end
 
-      # All available groups
-      def self.groups
-        load_groups.groups
-      end
+        def reset!
+          @collection = nil
+        end
 
-      # Check if a group exists by abbreviation
-      def self.group_exists?(abbreviation)
-        !find_group(abbreviation).nil?
-      end
+        def load_groups
+          collection
+        end
 
-      # Find a group by its abbreviation (case insensitive)
-      def self.find_group(abbreviation)
-        groups.find { |g| g.abbreviation.downcase == abbreviation.to_s.downcase }
-      end
+        def groups
+          collection.groups
+        end
 
-      # Get all IETF groups
-      def self.ietf_groups
-        groups.select { |g| g.organization == "ietf" }
-      end
+        def group_exists?(abbreviation)
+          collection.exists?(abbreviation)
+        end
 
-      # Get all IRTF groups
-      def self.irtf_groups
-        groups.select { |g| g.organization == "irtf" }
-      end
+        def find_group(abbreviation)
+          collection.find_by_abbreviation(abbreviation)
+        end
 
-      # Get all working groups (IETF)
-      def self.working_groups
-        groups.select { |g| g.type == "wg" }
-      end
+        def ietf_groups
+          collection.ietf_groups
+        end
 
-      # Get all research groups (IRTF)
-      def self.research_groups
-        groups.select { |g| g.type == "rg" }
-      end
+        def irtf_groups
+          collection.irtf_groups
+        end
 
-      # Get groups by type
-      def self.groups_by_type(type)
-        groups.select { |g| g.type.downcase == type.to_s.downcase }
-      end
+        def working_groups
+          collection.working_groups
+        end
 
-      # Get groups by area
-      def self.groups_by_area(area)
-        groups.select { |g| g.area&.downcase == area.to_s.downcase }
-      end
+        def research_groups
+          collection.research_groups
+        end
 
-      # Get active groups
-      def self.active_groups
-        groups.select { |g| g.status == "active" }
-      end
+        def groups_by_type(type)
+          collection.by_type(type)
+        end
 
-      # Get concluded groups
-      def self.concluded_groups
-        groups.select { |g| g.status == "concluded" }
-      end
+        def groups_by_area(area)
+          collection.by_area(area)
+        end
 
-      # Get all available group types
-      def self.group_types
-        groups.map(&:type).uniq.sort
-      end
+        def active_groups
+          collection.active
+        end
 
-      # Get all available areas
-      def self.areas
-        groups.map(&:area).compact.uniq.sort
+        def concluded_groups
+          collection.concluded
+        end
+
+        def group_types
+          collection.group_types
+        end
+
+        def areas
+          collection.areas
+        end
       end
     end
   end
