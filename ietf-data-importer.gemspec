@@ -21,9 +21,9 @@ Gem::Specification.new do |spec|
   spec.license       = "BSD-2-Clause"
   spec.required_ruby_version = Gem::Requirement.new(">= 3.0.0")
 
-  spec.add_dependency "lutaml-model", "~> 0.7"
+  spec.add_dependency "lutaml-model", "~> 0.8"
+  spec.add_dependency "nokogiri", "~> 1.19"
   spec.add_dependency "thor", "~> 1.0"
-  spec.add_dependency "nokogiri", "~> 1.18"
   spec.add_dependency "yaml"
 
   spec.files = Dir.chdir(File.expand_path(__dir__)) do
@@ -34,4 +34,5 @@ Gem::Specification.new do |spec|
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
+  spec.metadata["rubygems_mfa_required"] = "true"
 end

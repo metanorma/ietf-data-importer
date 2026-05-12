@@ -10,7 +10,7 @@ jobs:
     name: Check workgroups update
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - run: |
           git config user.name github-actions
@@ -18,19 +18,19 @@ jobs:
 
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '2.6'
+          ruby-version: '3.0'
           bundler-cache: true
 
-      - id: update_json
+      - id: update
         run: |
-          bundle exec bin/wg2json.rb > lib/metanorma/ietf/data/workgroups.json
+          bundle exec exe/ietf-data-importer fetch lib/ietf/data/importer/groups.yaml
           git diff-index --quiet HEAD -- && has_changes="false" || has_changes="true"
-          echo "::set-output name=has_changes::${has_changes}"
+          echo "has_changes=${has_changes}" >> "$GITHUB_OUTPUT"
 
-      - if: ${{ !steps.update_json.outputs.has_changes == 'true' }}
+      - if: steps.update.outputs.has_changes == 'true'
         run: gem bump --version patch --tag --push
 
-      - if: ${{ !steps.update_json.outputs.has_changes == 'true' }}
+      - if: steps.update.outputs.has_changes == 'true'
         name: publish to rubygems.org
         env:
           RUBYGEMS_API_KEY: ${{secrets.METANORMA_CI_RUBYGEMS_API_KEY}}
