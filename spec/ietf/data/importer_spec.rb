@@ -25,7 +25,12 @@ RSpec.describe Ietf::Data::Importer do
   end
 
   it "has a version number" do
-    expect(described_class::VERSION).to eq("0.3.0")
+    # Match any semver-shaped VERSION rather than a hardcoded value; the
+    # hardcoded 0.3.0 assertion started failing when version.rb was
+    # bumped to 0.3.1 by the release bot without also updating this test.
+    # Semver-shape check keeps the coverage without self-invalidating
+    # on every bump.
+    expect(described_class::VERSION).to match(/\A\d+\.\d+\.\d+\z/)
   end
 
   describe "query delegation", :query_tests do
